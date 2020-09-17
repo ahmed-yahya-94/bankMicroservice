@@ -1,0 +1,30 @@
+# Update <REGISTRY> <NAMESPACE> values before use
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microbank
+  labels:
+    app: microbank
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microbank
+  template:
+    metadata:
+      labels:
+        app: microbank
+    spec:
+      containers:
+      - name: microbank
+        image:  uk.icr.io/ttmicroservices/microservices:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        env:
+        - name: CLOUDANT_URL
+          valueFrom:
+            secretKeyRef:
+              name: cloudant
+              key: 6510204a-14fc-11ea-bf05-aef64c2af0d9
+              optional: true
