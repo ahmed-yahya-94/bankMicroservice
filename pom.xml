@@ -38,10 +38,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.cloudant</groupId>
-			<artifactId>cloudant-client</artifactId>
-			<version>2.11.0</version>
+			<artifactId>cloudant-spring-boot-starter</artifactId>
+			<version>0.0.3</version>
 		</dependency>
 		<dependency>
    			<groupId>com.googlecode.json-simple</groupId>
